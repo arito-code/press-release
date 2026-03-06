@@ -1,0 +1,213 @@
+/* ===== Base ===== */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: "Hiragino Kaku Gothic ProN", "Meiryo", "Noto Sans JP", sans-serif;
+  background: #f0f5f0;
+  color: #2d3e2d;
+  line-height: 1.8;
+  padding: 40px 20px 80px;
+}
+
+/* ===== Layout ===== */
+.container {
+  max-width: 860px;
+  margin: 0 auto;
+}
+
+/* ===== Page Title ===== */
+.page-title {
+  text-align: center;
+  margin-bottom: 40px;
+}
+.page-title h1 {
+  font-size: 1.8rem;
+  color: #1a4731;
+  border-bottom: 3px solid #38a169;
+  display: inline-block;
+  padding-bottom: 8px;
+}
+.page-title .date-badge {
+  display: inline-block;
+  background: #38a169;
+  color: #fff;
+  font-size: 0.85rem;
+  padding: 4px 14px;
+  border-radius: 20px;
+  margin-bottom: 10px;
+}
+
+/* ===== Section Card ===== */
+.section {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+  padding: 32px 36px;
+  margin-bottom: 28px;
+  border-left: 5px solid #38a169;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.section:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+}
+.section h2 {
+  font-size: 1.35rem;
+  color: #276749;
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  user-select: none;
+}
+.section h2 .toggle-icon {
+  font-size: 0.8rem;
+  transition: transform 0.3s;
+  margin-left: auto;
+  color: #a0aec0;
+}
+.section h2 .toggle-icon.collapsed {
+  transform: rotate(-90deg);
+}
+.section h3 {
+  font-size: 1.1rem;
+  color: #2d3e2d;
+  margin: 20px 0 10px;
+  padding-left: 12px;
+  border-left: 3px solid #68d391;
+}
+.section h4 {
+  font-size: 1rem;
+  color: #4a5568;
+  margin: 16px 0 8px;
+}
+.section-body {
+  overflow: hidden;
+  transition: max-height 0.4s ease;
+}
+
+/* ===== Lists ===== */
+ol, ul {
+  padding-left: 24px;
+  margin: 8px 0;
+}
+li {
+  margin-bottom: 6px;
+}
+li::marker {
+  color: #38a169;
+}
+
+/* ===== Blockquote ===== */
+blockquote {
+  background: #f0fff4;
+  border-left: 4px solid #68d391;
+  padding: 16px 20px;
+  border-radius: 0 8px 8px 0;
+  margin: 12px 0;
+  font-size: 0.95rem;
+  color: #22543d;
+}
+
+/* ===== Table ===== */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 12px 0;
+  font-size: 0.95rem;
+}
+th {
+  background: #f0fff4;
+  color: #276749;
+  text-align: left;
+  padding: 10px 14px;
+  border-bottom: 2px solid #c6f6d5;
+}
+td {
+  padding: 10px 14px;
+  border-bottom: 1px solid #e2e8f0;
+}
+tr:last-child td {
+  border-bottom: none;
+}
+
+/* ===== POINT badge ===== */
+.point {
+  background: linear-gradient(135deg, #c6f6d5, #9ae6b4);
+  color: #22543d;
+  padding: 12px 20px;
+  border-radius: 8px;
+  margin: 16px 0;
+  font-weight: bold;
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+}
+.point::before {
+  content: "💡";
+  font-size: 1.2rem;
+  flex-shrink: 0;
+}
+
+/* ===== Keyword ===== */
+.keyword {
+  font-weight: bold;
+  color: #276749;
+}
+
+/* ===== Comparison Row ===== */
+.compare {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin: 12px 0;
+}
+.compare-item {
+  background: #f7faf7;
+  border-radius: 8px;
+  padding: 16px;
+  border: 1px solid #c6f6d5;
+}
+.compare-item .label {
+  font-weight: bold;
+  color: #276749;
+  margin-bottom: 6px;
+}
+
+/* ===== Correct / Wrong ===== */
+.wrong {
+  color: #c53030;
+  font-weight: bold;
+}
+.correct {
+  color: #276749;
+  font-weight: bold;
+}
+
+/* ===== Formula ===== */
+.formula {
+  text-align: center;
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: #276749;
+  background: #f0fff4;
+  padding: 16px;
+  border-radius: 8px;
+  margin: 12px 0;
+}
+
+/* ===== Divider between seminars ===== */
+.seminar-divider {
+  border: none;
+  border-top: 3px dashed #9ae6b4;
+  margin: 50px 0;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 600px) {
+  body { padding: 20px 12px 60px; }
+  .section { padding: 20px 18px; }
+  .compare { grid-template-columns: 1fr; }
+  .page-title h1 { font-size: 1.4rem; }
+}
